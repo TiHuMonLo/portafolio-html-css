@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Portafolio</title>
+  
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+</head>
+<body>
+  <header class="header">
+    <a href="#" class="logo">TitoDev</a>
+    
+    <nav class="navbar">
+    <a href="#Inicio">Inicio</a>
+    <a href="#About">Sobre mí</a>
+    <a href="#education">education</a>
+    <a href="#Projects">Proyectos</a>
+    <a href="#Contact">Contacto</a>
+    </nav>  
+    
+   </header>
+
+  <section class="Home" id="Inicio">
+    <div class="Home-bg">
+      <img src="Foto.2.2.png" alt="Background Image" />
+
+    <div class="Home-content">
+      <h1>Hola, soy Tito Montiel</h1>
+      <h3>Frontend Developer</h3>
+      <p>Desarrollador web y amante de la tecnología</p>
+      <div class="btn-box">
+        <a href="#" class="btn">Contactame!!</a>
+      
+    </div>
+    </div>
+
+    <div class="Home-sci">
+      <a href="#"><i class='bx bxl-facebook'></i></a>
+      <a href="#"><i class='bx bxl-github'></i></a>
+      <a href="#"><i class='bx bxl-linkedin'></i></a> 
+
+
+      
+    </div>
+
+    <div class="Home-imgHover"></div>
+    </section>  
+
+    <!-- About Section -->
+
+  <section class="about" id="About">
+
+    <h2 class="heading">Sobre<span> mi</span></h2>
+    <div class="about-img">
+      <img src="src/Foto2.2.png" alt="" />
+      <span class="circle-spin"></span>
+    </div>
+    
+
+    <div class="about-content">
+      <h3>Fronted Developer</h3>
+        <p>Desarrollador web con experiencia en HTML, CSS y JavaScript. Me apasiona crear soluciones creativas y funcionales para la web. Siempre estoy aprendiendo y mejorando mis habilidades para ofrecer lo mejor a mis clientes.</p>
+
+      <div class="btn-box btns">
+        <a href="#" class="btn">Read More</a>
+      </div>
+    </div>
+  </section>
+  <!-- Skills Section -->
+
+<section id="education">
+  <h2>Habilidades</h2>
+  <div class="education-content">
+    <div class="education-card">
+      <img src="src/html-5.png" alt="HTML">
+      <h3>HTML5</h3>
+      <p>Maquetación semántica, formularios, estructura web.</p>
+    </div>
+    <div class="education-card">
+      <img src="src/css-3.png" alt="CSS">
+      <h3>CSS3</h3>
+      <p>Estilos responsivos, animaciones, flexbox y grid.</p>
+    </div>
+    <div class="education-card">
+      <img src="src/js.png" alt="JavaScript">
+      <h3>JavaScript</h3>
+      <p>DOM, funciones, eventos, lógica interactiva.</p>
+    </div>
+    <div class="education-card">
+      <img src="src/react.png" alt="React">
+      <h3>React</h3>
+      <p>Componentes, props, estado y hooks básicos.</p>
+    </div>
+    <div class="education-card">
+      <img src="src/nodejs.png" alt="Node.js">
+      <h3>Node.js</h3>
+      <p>Back-end, Express, APIs REST.</p>
+    </div>
+    <div class="education-card">
+      <img src="src/icons8-mysql-100.png" alt="SQL">
+      <h3>SQL</h3>
+      <p>Bases de datos, consultas, relaciones.</p>
+    </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects" id="Projects">
+    <h2 class="heading">Mis<span> Proyectos</span></h2>
+    <div class="projects-container">
+      <div class="projects-content">
+        <div class="project-card">
+          <img src="src/icons8-portafolio-100.png" alt="Proyecto 1">
+          <h3>Proyecto 1</h3>
+          <p>Descripción breve del proyecto 1 realizado con HTML, CSS y JavaScript.</p>
+          <a href="#" class="btn">Ver más</a>
+        </div>
+        <div class="project-card">
+          <img src="src/icons8-maletín-96.png" alt="Proyecto 2">
+          <h3>Proyecto 2</h3>
+          <p>Descripción breve del proyecto 2 realizado con React y Node.js.</p>
+          <a href="#" class="btn">Ver más</a>
+        </div>
+              </div>
+              <section class="contact" id="Contact">
+                <h2 class="heading">Contácta<span>me</span></h2>
+                <form id="contactForm" class="contact-form">
+                  <div class="input-box">
+                    <input type="text" id="name" name="name" placeholder="Nombre" required>
+                    <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
+                  </div>
+                  <div class="input-box">
+                    <input type="text" id="subject" name="subject" placeholder="Asunto" required>
+                  </div>
+                  <textarea id="message" name="message" rows="5" placeholder="Tu mensaje" required></textarea>
+                  <button type="submit" class="btn">Enviar</button>
+                </form>
+              </section>
+              <script>
+                document.getElementById('contactForm').addEventListener('submit', function(e) {
+                  e.preventDefault();
+                  const contact = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    subject: document.getElementById('subject').value,
+                    message: document.getElementById('message').value
+                  };
+                  let contacts = JSON.parse(localStorage.getItem('contacts')) || [];
+                  contacts.push(contact);
+                  localStorage.setItem('contacts', JSON.stringify(contacts));
+                  this.reset();
+                  alert('¡Mensaje guardado en localStorage!');
+                });
+              </script>
+
+</body>
+</html>
